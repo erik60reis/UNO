@@ -71,7 +71,7 @@ module.exports = class PlayCommand extends BaseCommand {
           let amount = 0;
           for (let i = game.discard.length - 1; i >= 0; i--) {
             if (game.discard[i].id === '+2')
-            {amount += 2;}
+            {amount += 20;}
             else {break;}
           }
           game.log('pickup', msg.author.id, { target: game.queue[1].id, amount, });
