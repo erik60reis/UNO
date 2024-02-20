@@ -61,17 +61,19 @@ module.exports = class PlayCommand extends BaseCommand {
             break;
           }
         case 'SKIP':
-          let skipped = game.queue.shift();
-          game.queue.push(skipped);
-          game.log('skip', msg.author.id, { target: game.queue[0].id, });
-
+			for (int k = 0; k < 3; k++)
+			{
+			  let skipped = game.queue.shift();
+			  game.queue.push(skipped);
+			  game.log('skip', msg.author.id, { target: game.queue[0].id, });
+			}
           extra = `Sorry, ${game.player.member.user.username}! Skip a turn! `;
           break;
         case '+2':
           let amount = 0;
           for (let i = game.discard.length - 1; i >= 0; i--) {
             if (game.discard[i].id === '+2')
-            {amount += 20;}
+            {amount += 10;}
             else {break;}
           }
           game.log('pickup', msg.author.id, { target: game.queue[1].id, amount, });
