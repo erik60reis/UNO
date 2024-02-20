@@ -8,11 +8,11 @@ module.exports = class SupportCommand extends BaseCommand {
   async execute(msg) {
     let chan = await this.client.getDMChannel(msg.author.id);
     try {
-      await chan.createMessage('Here\'s a link to my support server: https://discord.gg/H8KADM4');
-      return 'Ok, I\'ve DMed you a link to my support server!';
+      //await chan.createMessage('Here\'s a link to my support server: https://discord.gg/44QaDCwPS3');
+      return 'Here\'s a link to my support server: https://discord.gg/44QaDCwPS3';
     } catch (err) {
       console.log(err);
-      return 'Sorry, I wasn\'t able to DM you. Check if you have them open, and try again.';
+      return 'Sorry, an error ocurred, and try again.';
     }
   }
 };
